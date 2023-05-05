@@ -1,0 +1,25 @@
+FROM node:20-alpine
+
+ARG USER
+ARG PASS
+ARG HOST
+ARG PORT
+ARG DB
+
+ENV PGUSER $USER
+ENV PGPASSWORD $PASS
+ENV PGHOST $HOST
+ENV PGPORT $PORT
+ENV PGDATABASE $DB
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+RUN npm build
+
+CMD npm run prod

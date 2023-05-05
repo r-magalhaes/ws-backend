@@ -12,10 +12,7 @@ const connectDb = async () => {
   try{
     console.log("Connecting to database...")
     await pool.connect()
-    //const res = await pool.query('SELECT * FROM todo')
-    //console.log(res)
     console.log("Successfully connected...")
-    //await pool.end()
   } catch (error){
     console.log(error)
   }
@@ -101,5 +98,5 @@ app.delete("/todos/:id", async (req, res) => {
 });
 
 app.listen(5000, () => {
-  console.log("server has started on port 5000");
+  console.log("Server has started on port 5000");
 });
