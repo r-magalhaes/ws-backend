@@ -20,6 +20,4 @@ RUN npm install
 
 COPY . .
 
-RUN npm build
-
 CMD npm run prod
